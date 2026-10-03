@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AluTrade Global | Premium Aluminium Scrap Supplier</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* =========================================
+           CSS VARIABLES & RESET
+           ========================================= */
+        :root {
+            --navy: #0A2540;
+            --navy-light: #133B5C;
+            --green: #00A651;
+            --green-dark: #00823F;
+            --text-main: #333333;
+            --text-light: #666666;
+            --bg-light: #F8F9FA;
+            --white: #ffffff;
+            --font-heading: 'Montserrat', sans-serif;
+            --font-body: 'Inter', sans-serif;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* =========================================
+           UTILITY CLASSES
+           ========================================= */
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-padding {
+            padding: 100px 0;
+        }
+
+        .section-title {
+            font-family: var(--font-heading);
+            font-size: 2.5rem;
+            color: var(--navy);
+            text-align: center;
+            margin-bottom: 15px;
+            font-weight: 800;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-light);
+            font-size: 1.1rem;
+            margin-bottom: 50px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 16px 36px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: var(--transition);
+            text-align: center;
+        }
+
+        .btn-primary {
+            background: var(--green);
+            color: var(--white);
+            border: 2px solid var(--green);
+        }
+
+        .btn-primary:hover {
+            background: var(--green-dark);
+            border-color: var(--green-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 166, 81, 0.3);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid var(--white);
+        }
+
+        .btn-outline:hover {
+            background: var(--white);
+            color: var(--navy);
+        }
+
+        .btn-whatsapp {
+            background: #25D366;
+            color: var(--white);
+            border: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 18px 40px;
+            font-size: 1.1rem;
+            border-radius: 50px;
+        }
+
+        .btn-whatsapp:hover {
+            background: #128C7E;
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(37, 211, 102, 0.4);
+        }
+
+        /* =========================================
+           NAVIGATION
+           ========================================= */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px 0;
+            z-index: 1000;
+            background: rgba(10, 37, 64, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            transition: var(--transition);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: var(--font-heading);
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo i {
+            color: var(--green);
+            font-size: 1.6rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 35px;
+        }
+
+        .nav-links a {
+            color: rgba(255,255,255,0.8);
+            font-size: 0.95rem;
+            font-weight: 500;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--green);
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            font-size: 1.8rem;
+            color: var(--white);
+        }
+
+        /* =========================================
+           HERO SECTION
+           ========================================= */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(10, 37, 64, 0.85), rgba(10, 37, 64, 0.85)), url('https://images.unsplash.com/photo-1550009158-9ebf69173e03?q=80&w=2070&auto=format&fit=crop') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+            color: var(--white);
+        }
+
+        .hero-content h1 {
+            font-family: var(--font-heading);
+            font-size: 4rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 25px;
+        }
+
+        .hero-content h1 span {
+            color: var(--green);
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 45px;
+            font-weight: 300;
+            opacity: 0.9;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        /* =========================================
+           STATS BAR
+           ========================================= */
+        .stats-bar {
+            background: var(--green);
+            color: var(--white);
+            padding: 40px 0;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            text-align: center;
+        }
+
+        .stat-item i {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            opacity: 0.8;
+        }
+
+        .stat-item h3 {
+            font-family: var(--font-heading);
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .stat-item p {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 500;
+            opacity: 0.9;
+        }
+
+        /* =========================================
+           PRODUCTS SECTION
+           ========================================= */
+        .products {
+            background: var(--bg-light);
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .product-card {
+            background: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: var(--transition);
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .product-img {
+            height: 300px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .product-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .product-card:hover .product-img img {
+            transform: scale(1.05);
+        }
+
+        .product-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: var(--navy);
+            color: var(--white);
+            padding: 8px 16px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            border-radius: 4px;
+        }
+
+        .product-info {
+            padding: 40px;
+        }
+
+        .product-info h3 {
+            font-family: var(--font-heading);
+            font-size: 1.8rem;
+            color: var(--navy);
+            margin-bottom: 20px;
+        }
+
+        .specs-list {
+            margin-bottom: 25px;
+        }
+
+        .specs-list li {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+            font-size: 0.95rem;
+            color: var(--text-main);
+        }
+
+        .specs-list li i {
+            color: var(--green);
+            font-size: 1.1rem;
+        }
+
+        .product-detail {
+            background: rgba(0, 166, 81, 0.1);
+            padding: 15px;
+            border-radius: 4px;
+            border-left: 4px solid var(--green);
+            font-weight: 600;
+            color: var(--navy);
+            margin-top: 20px;
+        }
+
+        /* =========================================
+           COMMERCIALS SECTION
+           ========================================= */
+        .commercials {
+            background: var(--navy);
+            color: var(--white);
+            text-align: center;
+        }
+
+        .commercials-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .commercial-box {
+            background: rgba(255,255,255,0.05);
+            padding: 50px;
+            border-radius: 8px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .commercial-box i {
+            font-size: 3rem;
+            color: var(--green);
+            margin-bottom: 20px;
+        }
+
+        .commercial-box h3 {
+            font-family: var(--font-heading);
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+
+        .commercial-box p {
+            color: rgba(255,255,255,0.7);
+            font-size: 1.05rem;
+        }
+
+        /* =========================================
+           CONTACT SECTION
+           ========================================= */
+        .contact-section {
+            background: var(--bg-light);
+            text-align: center;
+        }
+
+        .contact-card {
+            background: var(--white);
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 60px;
+            border-radius: 12px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+        }
+
+        .contact-card h2 {
+            font-family: var(--font-heading);
+            font-size: 2.5rem;
+            color: var(--navy);
+            margin-bottom: 20px;
+        }
+
+        .contact-card p {
+            color: var(--text-light);
+            font-size: 1.1rem;
+            margin-bottom: 35px;
+        }
+
+        /* =========================================
+           FOOTER
+           ========================================= */
+        footer {
+            background: #07192B;
+            color: rgba(255,255,255,0.6);
+            padding: 40px 0;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        footer span {
+            color: var(--green);
+            font-weight: 600;
+        }
+
+        /* =========================================
+           RESPONSIVE DESIGN
+           ========================================= */
+        @media (max-width: 992px) {
+            .hero-content h1 { font-size: 3rem; }
+            .product-grid { grid-template-columns: 1fr; }
+            .stats-grid { grid-template-columns: repeat(2, 1fr); }
+            .commercials-grid { grid-template-columns: 1fr; }
+        }
+
+        @media (max-width: 768px) {
+            .hamburger { display: block; }
+            
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 75%;
+                height: 100vh;
+                background: var(--navy);
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                transition: var(--transition);
+                box-shadow: -10px 0 30px rgba(0,0,0,0.5);
+            }
+
+            .nav-links.active {
+                right: 0;
+            }
+
+            .hero-content h1 { font-size: 2.2rem; }
+            .hero-btns { flex-direction: column; gap: 15px; }
+            .stats-grid { grid-template-columns: 1fr; }
+            .contact-card { padding: 30px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ================= NAVIGATION ================= -->
+    <nav id="navbar">
+        <div class="container nav-container">
+            <a href="#" class="logo"><i class="fas fa-recycle"></i> ALUTRADE GLOBAL</a>
+            
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home" onclick="closeMenu()">Home</a></li>
+                <li><a href="#products" onclick="closeMenu()">Products</a></li>
+                <li><a href="#commercials" onclick="closeMenu()">Commercials</a></li>
+                <li><a href="#contact" onclick="closeMenu()">Contact</a></li>
+            </ul>
+            
+            <div class="hamburger" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ================= HERO SECTION ================= -->
+    <section id="home" class="hero">
+        <div class="container hero-content">
+            <h1>Reliable Supply<br><span>Global Reach</span></h1>
+            <p>Premium quality Aluminium Used Beverage Cans and Aluminium Wire Scrap available for serious buyers and smelting companies worldwide.</p>
+            <div class="hero-btns">
+                <a href="#products" class="btn btn-primary">View Products</a>
+                <a href="#contact" class="btn btn-outline">Get a Quote</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= STATS BAR ================= -->
+    <div class="stats-bar">
+        <div class="container stats-grid">
+            <div class="stat-item">
+                <i class="fas fa-industry"></i>
+                <h3>500MT</h3>
+                <p>Monthly Capacity</p>
+            </div>
+            <div class="stat-item">
+                <i class="fas fa-truck-loading"></i>
+                <h3>50MT</h3>
+                <p>Flexible Minimum</p>
+            </div>
+            <div class="stat-item">
+                <i class="fas fa-ship"></i>
+                <h3>Global</h3>
+                <p>Shipping to Any Safe Port</p>
+            </div>
+            <div class="stat-item">
+                <i class="fas fa-file-invoice"></i>
+                <h3>XRF / SGS</h3>
+                <p>Reports Available</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ================= PRODUCTS SECTION ================= -->
+    <section id="products" class="products section-padding">
+        <div class="container">
+            <h2 class="section-title">Our Premium Scrap Materials</h2>
+            <p class="section-subtitle">High-purity, clean, and sorted aluminium scrap ready for smelting and recycling.</p>
+            
+            <div class="product-grid">
+                <!-- Product 1: UBC -->
+                <div class="product-card">
+                    <div class="product-img">
+                        <span class="product-badge">Best Seller</span>
+                        <img src="https://images.unsplash.com/photo-1595278069441-2cf29f8005a4?q=80&w=2070&auto=format&fit=crop" alt="Aluminium Used Beverage Cans">
+                    </div>
+                    <div class="product-info">
+                        <h3>Aluminium Used Beverage Cans (UBC)</h3>
+                        <p style="color: var(--text-light); margin-bottom: 20px;">Clean, compact, and high-value. Perfect for smelting into new aluminium products.</p>
+                        
+                        <ul class="specs-list">
+                            <li><i class="fas fa-check-circle"></i> <strong>Purity:</strong> 98.94%+</li>
+                            <li><i class="fas fa-check-circle"></i> <strong>Moisture:</strong> 0%</li>
+                            <li><i class="fas fa-check-circle"></i> <strong>No Visible Rust</strong></li>
+                            <li><i class="fas fa-check-circle"></i> <strong>No Iron</strong></li>
+                            <li><i class="fas fa-check-circle"></i> <strong>No Paint</strong></li>
+                            <li><i class="fas fa-check-circle"></i> <strong>Clean & Sorted</strong></li>
+                        </ul>
+
+                        <div class="product-detail">
+                            <i class="fas fa-box"></i> Packaging: Compacted Bales (20 - 25 KG)
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 2: Wire Scrap -->
+                <div class="product-card">
+                    <div class="product-img">
+                        <span class="product-badge">High Grade</span>
+                        <img src="https://images.unsplash.com/photo-1550009158-9ebf69173e03?q=80&w=2070&auto=format&fit=crop" alt="Aluminium Wire Scrap">
+                    </div>
+                    <div class="product-info">
+                        <h3>Aluminium Wire Scrap</h3>
+                        <p style="color: var(--text-light); margin-bottom: 20px;">Pure, clean, and bright wire scrap. Highest quality for specialized smelting requirements.</p>
+                        
+                        <ul class="specs-list">
+                            <li><i class="fas fa-check-circle"></i> <strong>Purity:</strong> 98.98%+</li>
+                            <li><i class="fas fa-check-circle"></i> <strong>Moisture:</strong> 0%</li>
+                            <li><i class="fas fa-check-circle"></i> <strong>No Contamination</strong></li>
+                            <li><i class="fas fa-check-circle"></i> <strong>Clean & Bright</strong></li>
+                        </ul>
+
+                        <div class="product-detail">
+                            <i class="fas fa-layer-group"></i> Type: High Grade Aluminium Wire
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= COMMERCIALS SECTION ================= -->
+    <section id="commercials" class="commercials section-padding">
+        <div class="container">
+            <h2 class="section-title" style="color: var(--white);">Commercial Terms</h2>
+            <p class="section-subtitle" style="color: rgba(255,255,255,0.7);">We offer competitive and flexible terms to ensure a smooth transaction for our global partners.</p>
+            
+            <div class="commercials-grid">
+                <div class="commercial-box">
+                    <i class="fas fa-hand-holding-usd"></i>
+                    <h3>Price Negotiable</h3>
+                    <p>We offer competitive pricing based on market rates. Contact us for a custom quote tailored to your volume and destination.</p>
+                </div>
+                <div class="commercial-box">
+                    <i class="fas fa-bolt"></i>
+                    <h3>Immediate Payment</h3>
+                    <p>We understand the importance of cash flow. Immediate payment upon agreement and verification (Subject to agreed terms).</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= CONTACT SECTION ================= -->
+    <section id="contact" class="contact-section section-padding">
+        <div class="container">
+            <div class="contact-card">
+                <h2>Ready to Secure Your Supply?</h2>
+                <p>Contact our trade desk directly on WhatsApp for immediate assistance, pricing, and logistics coordination.</p>
+                
+                <a href="https://wa.me/254789268455?text=Hello%20AluTrade%20Global,%20I%20am%20interested%20in%20purchasing%20Aluminium%20Scrap.%20Please%20provide%20more%20details." target="_blank" class="btn-whatsapp">
+                    <i class="fab fa-whatsapp"></i> Chat on WhatsApp: +254 789 268 455
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+    <footer>
+        <div class="container">
+            <p>Connecting Global Markets with <span>Reliable Supply Solutions.</span></p>
+            <p style="margin-top: 10px; font-size: 0.8rem;">&copy; 2024 AluTrade Global. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- ================= JAVASCRIPT ================= -->
+    <script>
+        /* --- Mobile Menu Toggle --- */
+        const navLinks = document.getElementById('navLinks');
+        function toggleMenu() {
+            navLinks.classList.toggle('active');
+        }
+        function closeMenu() {
+            navLinks.classList.remove('active');
+        }
+
+        /* --- Navbar Scroll Effect --- */
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.style.padding = '15px 0';
+                navbar.style.boxShadow = '0 4px 20px rgba(0,0,0,0.3)';
+            } else {
+                navbar.style.padding = '20px 0';
+                navbar.style.boxShadow = 'none';
+            }
+        });
+    </script>
+</body>
+  </html>
